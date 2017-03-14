@@ -10,6 +10,9 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var note_list_component_1 = require("./components/note-list.component/note-list.component");
+var note_item_component_1 = require("./components/note-item.component/note-item.component");
+var note_form_component_1 = require("./components/note-form.component/note-form.component");
 var data_service_1 = require("./services/data.service");
 var http_1 = require("@angular/http");
 var AppModule = (function () {
@@ -21,7 +24,10 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
         declarations: [
-            app_component_1.AppComponent
+            app_component_1.AppComponent,
+            note_list_component_1.NoteListComponent,
+            note_item_component_1.NoteItemComponent,
+            note_form_component_1.NoteFormComponent
         ],
         providers: [data_service_1.DataService],
         bootstrap: [app_component_1.AppComponent]

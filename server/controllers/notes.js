@@ -24,7 +24,8 @@ exports.create = function(req, res){
     var note ={
         title: req.body.title,
         date: Date.now(),
-        text: req.body.text
+        text: req.body.text,
+        completed: req.body.completed
     };
     Notes.create(note, function( err, result){
         if(err){
@@ -41,6 +42,7 @@ exports.update = function(req, res){
             title: req.body.title,
             lastModDate: Date.now(),
             text: req.body.text,
+            completed: req.body.completed
         },
             function(err, result){
             if(err){
