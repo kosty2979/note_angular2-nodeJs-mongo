@@ -23,6 +23,8 @@ var NoteListComponent = (function () {
     };
     ;
     NoteListComponent.prototype.edit = function (note) {
+        this.editNote = note;
+        this.form = true;
         console.log("edit", note);
     };
     ;

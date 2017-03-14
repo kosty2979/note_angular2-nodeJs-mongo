@@ -20,6 +20,8 @@ export class NoteListComponent implements OnInit  {
     };
 
     public edit( note: Note ) {
+        this.editNote = note;
+        this.form = true;
         console.log("edit", note)
     };
     public delete(note: Note){
