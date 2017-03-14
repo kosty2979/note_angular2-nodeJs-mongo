@@ -7,6 +7,6 @@ export class DataService{
     constructor( private http: Http ){ }
 
     getData(){
-        return this.http.get("https://randomuser.me/api/?results=50")
+        return this.http.get("http://localhost:3000/notes")
     }
 }

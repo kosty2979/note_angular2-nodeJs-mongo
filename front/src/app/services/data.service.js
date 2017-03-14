@@ -16,7 +16,7 @@ var DataService = (function () {
         this.http = http;
     }
     DataService.prototype.getData = function () {
-        return this.http.get("https://randomuser.me/api/?results=50");
+        return this.http.get("http://localhost:3000/notes");
     };
     return DataService;
 }());
