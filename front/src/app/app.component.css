@@ -1,6 +1,6 @@
 .wrapper{
-    border:1px solid gainsboro;
-    border-radius: 5px;
-    margin:15px;
-    //margin-bottom:15px;
+
+}
+.panel-heading{
+    min-height:25px;
 }

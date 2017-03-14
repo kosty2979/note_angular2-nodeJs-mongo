@@ -12,10 +12,10 @@ import { DataService} from './services/data.service';
 })
 
 export class AppComponent implements OnInit  {
-    users:any;
+    notes:any;
     constructor( private httpService: DataService){}
     ngOnInit(){
-        this.httpService.getData().subscribe((data: Response) => this.users=data.json());
+        this.httpService.getData().subscribe((data: Response) => this.notes=data.json());
     }
 
 }

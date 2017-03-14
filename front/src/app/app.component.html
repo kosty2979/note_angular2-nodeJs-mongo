@@ -1,16 +1,23 @@
 
 <div class="row">
-    <div class="col-xs-3 wrapper" *ngFor="let user of users">
-        <!--<div class="col-xs-6 text-right">-->
-            <!--<img src="{{user.picture.large}}" alt="">-->
-        <!--</div>-->
-        <div class="col-xs-6">
-            <!--<p>{{user.name.title+": "+user.name.first+" "+user.name.last}}</p>-->
-            <!--<p>{{user.email}}</p>-->
-            <!--<p>{{user.phone}}</p>-->
-            <!--<p>{{user.location.city}}</p>-->
-            <p>{{user.name}}</p>
+    <div class="col-xs-3 wrapper" *ngFor="let note of notes let i=index">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse{{i}}">{{note.title}}</a>
+                    </h4>
+                </div>
+                <div id="collapse{{i}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>{{note.text}}</p>
+                        <p>{{note.date | date:'medium' }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 
 </div>
