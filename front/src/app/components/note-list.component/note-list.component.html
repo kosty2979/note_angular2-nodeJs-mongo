@@ -1,5 +1,5 @@
 <div class="row text-center">
-    <h2>notes <span class="pull-right" (click)="openForm()"><i class="material-icons">add_circle_outline</i></span></h2>
+    <h2>notes <button class="icon pull-right chevron" (click)="openForm()"><i class="material-icons">add_circle_outline</i></button></h2>
 </div>
 <div class="row" *ngIf="form">
     <note-form [note]="editNote" (close)="getNotes()" (addNote)="addNote($event)" (save) ="save($event)"></note-form>

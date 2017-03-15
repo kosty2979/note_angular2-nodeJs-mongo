@@ -7,7 +7,8 @@ module.exports = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'app': './src/app/main.ts'
+        'app': './src/app/main.ts',
+        'css':'./src/style.css'
     },
     output: {
         path: path.resolve('dist'),
@@ -41,9 +42,9 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
             },
             {
-                test: /\.css$/,
-                include: path.resolve('src', 'app'),
-                loader: 'raw-loader'
+                // test: /\.css$/,
+                // include: path.resolve('src', 'app'),
+                // loader: 'raw-loader'
             }]
     },
 

@@ -4,9 +4,9 @@
     </h2>
     <form class="col-xs-12" (ngSubmit) = "onSubmit()"  #editForm="ngForm" >
         <div class="form-group">
-            <span class="pull-right" (click)="closeForm()">
+            <button class=" icon pull-right delete" (click)="closeForm()">
                 <i class="material-icons">highlight_off</i>
-            </span>
+            </button>
         </div>
         <div *ngIf="error" class="alert alert-danger">
             errortext
@@ -25,7 +25,7 @@
             </textarea>
         </div>
         <div class="pull-right">
-            <button  type="submit"  [disabled]="editForm.form.invalid" class="btn"><i class="material-icons">done</i></button>
+            <button  type="submit"  [disabled]="editForm.form.invalid" class="icon edit"><i class="material-icons">done</i></button>
         </div>
     </form>
 </div>

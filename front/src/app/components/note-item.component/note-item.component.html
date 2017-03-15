@@ -3,16 +3,16 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <span class="pull-left">
+                    <button  class="icon pull-left chevron">
                         <i class="material-icons" (click)="collapse = !collapse">{{ collapse ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}}</i>
-                    </span>
+                    </button>
                     {{note.title}}
-                    <span class="pull-right delete" (click) = "onDelete( )">
+                    <button class=" icon pull-right delete" (click) = "onDelete( )">
                         <i class="material-icons">delete</i>
-                    </span>
-                    <span class="pull-right edit" (click) = "onEdit( )">
+                    </button>
+                    <button class="icon pull-right edit" (click) = "onEdit( )">
                         <i class="material-icons">create</i>
-                    </span>
+                    </button>
                 </h4>
             </div>
             <div  class="panel-collapse" [ngClass]="{'collapse':collapse, 'collapse-in':collapse}">
