@@ -14,10 +14,20 @@ var note_1 = require("../../share/note");
 var NoteFormComponent = (function () {
     function NoteFormComponent() {
         this.close = new core_1.EventEmitter();
+        this.save = new core_1.EventEmitter();
+        this.addNote = new core_1.EventEmitter();
     }
     NoteFormComponent.prototype.closeForm = function () {
-        this.note = null;
         this.close.emit();
+    };
+    ;
+    NoteFormComponent.prototype.onSubmit = function () {
+        if (this.note.date) {
+            this.save.emit(this.note);
+        }
+        else {
+            this.addNote.emit(this.note);
+        }
     };
     return NoteFormComponent;
 }());
@@ -29,6 +39,14 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], NoteFormComponent.prototype, "close", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], NoteFormComponent.prototype, "save", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], NoteFormComponent.prototype, "addNote", void 0);
 NoteFormComponent = __decorate([
     core_1.Component({
         //moduleId: module.id,
@@ -37,4 +55,5 @@ NoteFormComponent = __decorate([
     })
 ], NoteFormComponent);
 exports.NoteFormComponent = NoteFormComponent;
+;
 //# sourceMappingURL=note-form.component.js.map

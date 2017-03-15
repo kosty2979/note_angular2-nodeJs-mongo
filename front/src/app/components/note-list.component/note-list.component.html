@@ -2,8 +2,10 @@
     <h2>notes <span class="pull-right" (click)="openForm()"><i class="material-icons">add_circle_outline</i></span></h2>
 </div>
 <div class="row" *ngIf="form">
-    <note-form [note]="editNote" (close)=" form = false; editNote = null "></note-form>
+    <note-form [note]="editNote" (close)="getNotes()" (addNote)="addNote($event)" (save) ="save($event)"></note-form>
 </div>
 <div class="row" *ngIf="!form" >
-    <note-item  *ngFor="let note of notes let i=index" [note]="note" (delete)="delete( $event )" (edit)="edit( $event) "></note-item>
+    <note-item  *ngFor="let note of notes let i=index" [note]="note"  (delete)="delete($event)" (edit)="edit($event)">
+
+    </note-item>
 </div>

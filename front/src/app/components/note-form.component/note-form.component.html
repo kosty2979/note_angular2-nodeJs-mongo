@@ -1,11 +1,31 @@
 <div class="col-xs-offset-3 col-xs-6 text-center">
-    <h2>{{note ? "Edit note" : "Create new Note"}}
-        <span class="pull-right" (click)="closeForm()">
-            <i class="material-icons">highlight_off</i>
-        </span>
+    <h2>{{note.title ? "Edit note" : "Create new Note"}}
+
     </h2>
-    <form class="col-xs-12" action="">
-        <input type="text" class="form-control">
-        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+    <form class="col-xs-12" (ngSubmit) = "onSubmit()"  #editForm="ngForm" >
+        <div class="form-group">
+            <span class="pull-right" (click)="closeForm()">
+                <i class="material-icons">highlight_off</i>
+            </span>
+        </div>
+        <div *ngIf="error" class="alert alert-danger">
+            errortext
+        </div>
+        <div class="form-group">
+            <label>Note name</label>
+            <input class="form-control" type="text" title="Input name for note" name="title" [(ngModel)]="note.title" #title="ngModel" required pattern=".{4,}" >
+
+            <div [hidden]="title.valid || title.untouched" class="alert alert-danger">
+                name not valid
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Note text</label>
+            <textarea class="form-control"  title="Input name for note" name="text" [(ngModel)]="note.text" #text="ngModel" required rows="10" >
+            </textarea>
+        </div>
+        <div class="pull-right">
+            <button  type="submit"  [disabled]="editForm.form.invalid" class="btn"><i class="material-icons">done</i></button>
+        </div>
     </form>
 </div>

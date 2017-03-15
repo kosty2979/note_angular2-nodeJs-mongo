@@ -19,6 +19,7 @@
                 <div class="panel-body">
                     <p>{{note.text}}</p>
                     <p>create date:{{note.date | date:'medium' }}</p>
+                    <p *ngIf="note.lastModDate">modify date:{{note.lastModDate | date:'medium' }}</p>
                 </div>
             </div>
         </div>

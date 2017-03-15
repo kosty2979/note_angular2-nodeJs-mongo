@@ -11,29 +11,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../../services/data.service");
+var note_1 = require("../../share/note");
 var NoteListComponent = (function () {
-    function NoteListComponent(httpService) {
-        this.httpService = httpService;
-        this.form = false;
-        this.editNote = null;
+    function NoteListComponent(dataService) {
+        this.dataService = dataService;
     }
     NoteListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.httpService.getData().subscribe(function (data) { return _this.notes = data.json(); });
+        this.getNotes();
     };
     ;
     NoteListComponent.prototype.edit = function (note) {
         this.editNote = note;
         this.form = true;
-        console.log("edit", note);
     };
     ;
     NoteListComponent.prototype.delete = function (note) {
-        console.log("delete", note);
+        var _this = this;
+        this.dataService.deleteNote(note).subscribe(function () {
+            _this.getNotes();
+        });
     };
     ;
     NoteListComponent.prototype.openForm = function () {
         this.form = true;
+    };
+    ;
+    NoteListComponent.prototype.save = function (note) {
+        var _this = this;
+        this.dataService.saveNote(note).subscribe(function () {
+            _this.getNotes();
+        });
+    };
+    ;
+    NoteListComponent.prototype.addNote = function (note) {
+        var _this = this;
+        this.dataService.addNote(note).subscribe(function () {
+            _this.getNotes();
+        });
+    };
+    ;
+    NoteListComponent.prototype.getNotes = function () {
+        var _this = this;
+        this.form = false;
+        this.editNote = new note_1.Note();
+        this.dataService.getData().subscribe(function (data) { return _this.notes = data.json(); });
     };
     ;
     return NoteListComponent;
@@ -47,4 +68,5 @@ NoteListComponent = __decorate([
     __metadata("design:paramtypes", [data_service_1.DataService])
 ], NoteListComponent);
 exports.NoteListComponent = NoteListComponent;
+;
 //# sourceMappingURL=note-list.component.js.map

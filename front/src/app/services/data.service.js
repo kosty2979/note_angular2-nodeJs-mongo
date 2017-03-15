@@ -18,6 +18,27 @@ var DataService = (function () {
     DataService.prototype.getData = function () {
         return this.http.get("http://localhost:3000/notes");
     };
+    ;
+    DataService.prototype.saveNote = function (note) {
+        var body = JSON.stringify(note);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+        var url = "http://localhost:3000/notes/" + note._id;
+        return this.http.put(url, body, { headers: headers });
+    };
+    ;
+    DataService.prototype.deleteNote = function (note) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+        var url = "http://localhost:3000/notes/" + note._id;
+        return this.http.delete(url, { headers: headers });
+    };
+    ;
+    DataService.prototype.addNote = function (note) {
+        var body = JSON.stringify(note);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+        var url = "http://localhost:3000/notes/";
+        return this.http.post(url, body, { headers: headers });
+    };
+    ;
     return DataService;
 }());
 DataService = __decorate([
