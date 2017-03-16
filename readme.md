@@ -1,18 +1,18 @@
 # SPA "Notes" Angular2 + NodeJs and Mongo
 
-##install dev-server
+## install dev-server
  
 open  folder "Front" in the console and run
 
 `npm install`
 
-##install dev-server
+## install dev-server
  
 open  folder "Server" in the console and run
 
 `npm install`
 
-##Start project
+## Start project
  
  1. Open folder "Server" in the console and run
 
