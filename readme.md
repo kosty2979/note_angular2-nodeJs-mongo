@@ -6,7 +6,7 @@ open  folder "Front" in the console and run
 
 `npm install`
 
-## install dev-server
+## install api-server
  
 open  folder "Server" in the console and run
 
