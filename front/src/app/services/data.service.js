@@ -46,4 +46,5 @@ DataService = __decorate([
     __metadata("design:paramtypes", [http_1.Http])
 ], DataService);
 exports.DataService = DataService;
+;
 //# sourceMappingURL=data.service.js.map

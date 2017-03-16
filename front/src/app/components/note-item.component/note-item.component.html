@@ -17,11 +17,14 @@
             </div>
             <div  class="panel-collapse" [ngClass]="{'collapse':collapse, 'collapse-in':collapse}">
                 <div class="panel-body">
-                    <p>{{note.text}}</p>
-                    <p>create date:{{note.date | date:'medium' }}</p>
-                    <p *ngIf="note.lastModDate">modify date:{{note.lastModDate | date:'medium' }}</p>
+                    <p class="note__text">{{note.text}}</p>
+                </div>
+                <div class="panel-footer">
+                    <p class="note__date">create date:{{note.date | date:'medium' }}</p>
+                    <p *ngIf="note.lastModDate" class="note__date">modify date:{{note.lastModDate | date:'medium' }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

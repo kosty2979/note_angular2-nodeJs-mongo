@@ -40,7 +40,8 @@ exports.update = function(req, res){
         {
             title:  req.body.title? req.body.title : null,
             lastModDate: Date.now(),
-            text: req.body.text? req.body.text : null
+            text: req.body.text? req.body.text : null,
+            date: req.body.date? req.body.date : null
         },
             function(err, result){
             if(err){

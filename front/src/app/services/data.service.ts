@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Http, Headers, URLSearchParams } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Note } from '../share/note';
 
 @Injectable()
@@ -22,6 +22,7 @@ export class DataService{
     public deleteNote(note:Note){
         let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
         let url = "http://localhost:3000/notes/"+note._id;
+
         return this.http.delete(url, {headers: headers})
     };
 
@@ -33,6 +34,7 @@ export class DataService{
         return this.http.post(url, body, {headers: headers})
     };
 
-}
+};
+
 
 

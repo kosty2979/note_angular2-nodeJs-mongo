@@ -24,7 +24,7 @@ export class NoteListComponent implements OnInit  {
         this.form = true;
     };
 
-    public delete(note: Note):void{
+    public deleteNote(note: Note):void{
         this.dataService.deleteNote(note).subscribe(() => {
             this.getNotes()
         })
@@ -34,7 +34,7 @@ export class NoteListComponent implements OnInit  {
         this.form = true;
     };
 
-    public save(note: Note):void{
+    public saveNote(note: Note):void{
         this.dataService.saveNote(note).subscribe(() => {
             this.getNotes();
         });

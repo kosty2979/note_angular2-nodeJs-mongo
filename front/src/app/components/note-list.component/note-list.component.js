@@ -25,7 +25,7 @@ var NoteListComponent = (function () {
         this.form = true;
     };
     ;
-    NoteListComponent.prototype.delete = function (note) {
+    NoteListComponent.prototype.deleteNote = function (note) {
         var _this = this;
         this.dataService.deleteNote(note).subscribe(function () {
             _this.getNotes();
@@ -36,7 +36,7 @@ var NoteListComponent = (function () {
         this.form = true;
     };
     ;
-    NoteListComponent.prototype.save = function (note) {
+    NoteListComponent.prototype.saveNote = function (note) {
         var _this = this;
         this.dataService.saveNote(note).subscribe(function () {
             _this.getNotes();

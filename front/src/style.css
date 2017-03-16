@@ -72,12 +72,29 @@ form{
     border: 1px solid lightgrey;
     border-radius: 5px;
 }
+.note__text{
+    white-space: pre-wrap;
+}
+.note__date{
+    margin-bottom:0;
+    font-size:12px;
+    font-weight: bold;
+}
 .icon.chevron{
+    color: #3663a9;
+}
+.icon.chevron:hover{
     color: #5199ff;
 }
 .icon.edit{
-    color: #0dc757;
+    color: #13834b;
+}
+.icon.edit:hover{
+    color: #1cdf21;
 }
 .icon.delete{
-    color: orangered;
+    color: #8d3826;
+}
+.icon.delete:hover{
+    color: #d81c06;
 }
